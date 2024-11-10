@@ -15,6 +15,12 @@ To run this application, ensure you have the following installed:
 2. Navigate to the project directory in your terminal.
 3. Install the required Python packages
 
-### Then run the application
+### Running the Application
+In your terminal, navigate to the folder containing your project files.
+
+Start the Flask application by running:
 
 python app.py
+
+The application will start running on your local server (usually http://127.0.0.1:5000).
+Open your web browser and visit http://127.0.0.1:5000 to access the quiz.
