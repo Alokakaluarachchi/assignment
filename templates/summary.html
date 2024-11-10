@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Summary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <!-- Replace with your company's logo -->
+                <img src="{{ url_for('static', filename='company_logo.jpg') }}" alt="Company Logo" class="logo">
+            </div>
+            <h1>Quiz Summary</h1>
+            <p class="score-text">Your Score: <span class="score">{{ score }} / {{ total }}</span></p>
+        </header>
+
+        <div class="quiz-summary">
+            <h2>Detailed Results</h2>
+            <ul>
+                {% for result in results %}
+                    <li class="result-item">
+                        <strong>Q: {{ result.question }}</strong><br>
+                        Your Answer: <span class="answer">{{ result.user_answer }}</span><br>
+                        Correct Answer: <span class="correct-answer">{{ result.correct_answer }}</span><br>
+                        {% if result.is_correct %}
+                            <span class="result correct">Correct!</span>
+                        {% else %}
+                            <span class="result incorrect">Incorrect!</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            
+            <div class="actions">
+                <form action="{{ url_for('index') }}" method="get">
+                    <button type="submit" class="restart-btn">Restart Quiz</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
