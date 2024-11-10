@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Stock Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Company Logo and Training Introduction -->
+        <header>
+            <div class="logo-container">
+                <!-- Replace with your company's logo image -->
+                <img src="{{ url_for('static', filename='company_logo.jpg') }}" alt="Company Logo" class="logo">
+            </div>
+            <h1>Interactive Stock Quiz</h1>
+            <p>Welcome to your employee training. Please complete this quiz to assess your understanding of stock market concepts.</p>
+        </header>
+
+        <!-- Quiz Form -->
+        <form action="{{ url_for('submit_quiz') }}" method="post" class="quiz-form">
+            {% for question in questions %}
+                <div class="question">
+                    <p class="question-text">{{ question["id"] }}. {{ question["question"] }}</p>
+                    <div class="options">
+                        {% for key, option in question["options"].items() %}
+                            <label>
+                                <input type="radio" name="{{ question['id'] }}" value="{{ key }}" required>
+                                <span>{{ option }}</span>
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+    </div>
+</body>
+</html>
