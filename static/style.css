@@ -1,1 +1,227 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8; /* Light blue-gray background */
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 200px; /* Adjust logo size */
+    height: auto;
+}
+
+h1 {
+    color: #001EFF; /* Blue color for the title */
+    font-size: 2.5rem; /* Larger heading */
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Style for quiz questions and answers */
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    background-color: #e8e9f5;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.question-text {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.options label {
+    display: block;
+    font-size: 1rem;
+    padding: 8px 0;
+    color: #333;
+}
+
+.options input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    padding: 14px 22px; /* Larger button */
+    font-size: 1.1rem;
+    background-color: #001EFF; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Makes the button full width */
+    max-width: 400px; /* Limits the button's maximum width */
+    margin-left: auto;
+    margin-right: auto; /* Centers the button horizontally */
+    display: block; /* Ensures the button is treated as a block element */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+/* Restart button style */
+.restart-btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 50%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto; /* Centers the button horizontally */
+    display: block; /* Ensures the button is treated as a block element */
+}
+
+
+.restart-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .question-text {
+        font-size: 1rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .restart-btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Style for the score section */
+.score-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4984a0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Style for the actual score value */
+.score {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff; /* White for score text */
+    background-color: #001EFF; /* Green background for positive score */
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* For incorrect scores, you can add a red color */
+.score.incorrect {
+    color: #fff; /* White text */
+    background-color: #f44336; /* Red for incorrect scores */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.score.incorrect:hover {
+    background-color: #e53935;
+}
+
+/* Style for the actual results */
+.quiz-summary {
+    padding: 20px;
+}
+
+.quiz-summary h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.quiz-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.result-item {
+    background-color: #fafafa;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-item strong {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.result-item span {
+    font-weight: 600;
+}
+
+.result.correct {
+    color: #4CAF50;
+}
+
+.result.incorrect {
+    color: #f44336;
+}
 
